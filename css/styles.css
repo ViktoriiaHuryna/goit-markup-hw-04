@@ -1,0 +1,402 @@
+:root {
+  /* Font */
+  --primary-font: Roboto, sans-serif;
+  /* Colors */
+  --headings-cl: #2E2F42;
+  --text-cl: #434455;
+  --CTA-iris: #4D5AE5;
+  --CTA-ocean: #404BBF;
+  --light-bg: #F4F4FD;
+  --white-cl: white;
+  --acent-cl: #E7E9FC; 
+}
+
+
+/* Reset */
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+    padding: 0;
+}
+
+
+.link {
+  text-decoration: none;
+  color: currentColor;
+  font-style: normal;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/**
+  |============================
+  | Common styles
+  |============================
+*/
+
+body {
+  font-family: var(--primary-font);
+  color: var(--text-cl);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  background-color: var(--white-cl);
+}
+
+.container {
+  max-width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/**
+  |============================
+  | Header section
+  |============================
+*/
+
+.header {
+  border-bottom: 1px solid var(--acent-cl);
+}
+
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav.list {
+  display: flex;
+  align-items: center;
+    gap: 40px;
+}
+
+.header-logo {
+    font-family: Raleway, sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 1.17;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--CTA-iris);
+      padding-top: 24px;
+      padding-bottom: 24px;
+      margin-right: 76px;
+}
+
+.header-logo-blue {
+  color: var(--headings-cl);
+}
+
+.link {}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-address-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header-item {}
+
+.header-link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--headings-cl);
+  padding: 24px 0;
+}
+
+.header-link:hover, .header-link:focus, .header-address.link:hover, .header-address.link:focus {
+  color: var(--CTA-ocean);
+}
+
+.header-address {
+  font-style: normal;
+}
+
+.header-address.link {
+color: var(--text-cl);
+letter-spacing: 0.02em;
+}
+
+.main {}
+
+.section {}
+
+/**
+  |============================
+  | Hero Styles
+  |============================
+*/
+
+.hero {
+  background-color: var(--headings-cl);
+  padding-top: 188px;
+  padding-bottom: 188px;
+}
+
+.hero-title {
+  font-size: 56px;
+  line-height: 1.07;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--white-cl);
+  margin: 0 auto;
+  max-width: 496px;
+  padding-bottom: 48px;
+}
+
+.hero-btn {
+  background-color: var(--CTA-iris);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white-cl);
+  display: block;
+  min-width: 169px;
+  height: 56px;
+  padding: 16px 32px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 4px;
+}
+
+.hero-btn:hover, .hero-btn:focus {
+  background-color: var(--CTA-ocean);
+}
+
+/**
+  |============================
+  | Features styles
+  |============================
+*/
+
+.features {
+  padding: 120px 0;
+}
+
+.features-list {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.features-item {
+  width: calc((100% - 3 * 24px) / 4);
+}
+
+
+.section-features-subtitle, .portfolio-subtitle, .team-name {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--headings-cl);
+  letter-spacing: 0.02em;
+}
+
+.section-features-subtitle {
+  margin-bottom: 8px;
+}
+
+.features-text {}
+
+/**
+  |============================
+  | What are we doing section
+  |============================
+*/
+
+.section-product {
+  padding-bottom: 120px;
+}
+
+.section-product-list {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.section-product-list-item {}
+
+
+.section-product-title, .section-team-title {
+  line-height: 1.11;
+  font-size: 36px;
+  color: var(--headings-cl);
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+/**
+  |============================
+  | Team section styles
+  |============================
+*/
+
+.team {
+  background-color: var(--light-bg);
+  letter-spacing: 0.02em;
+  padding: 120px 0;
+}
+
+.section-team-title {}
+
+.team-list {
+display: flex;
+align-items: center;
+gap: 24px;
+}
+
+.team-name {
+  margin-bottom: 8px;
+}
+
+.team-list-item {
+  background-color: var(--white-cl);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team-card-content {
+  padding: 32px 16px;
+  text-align: center;
+  
+}
+
+.team-name-job {
+  font-size: 16px;
+}
+
+/**
+  |============================
+  | Portfolio styles
+  |============================
+*/
+
+.portfolio {
+  padding-bottom: 120px;
+    padding-top: 96px;
+}
+
+.section {}
+
+.portfolio-btn {
+  font-weight: 500;
+  line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: var(--CTA-iris);
+    background-color: var(--light-bg);
+      text-transform: capitalize;
+        padding: 12px 24px;
+        border: 1px solid var(--acent-cl);
+        border-radius: 4px;
+}
+
+.portfolio-btn:hover, .portfolio-btn:focus {
+background-color: var(--CTA-ocean);
+color: var(--white-cl);
+border: 1px solid transparent;
+}
+
+.portfolio-subtitle {
+  margin-bottom: 8px;
+}
+
+.portfolio-filters-list {
+display: flex;
+align-items: center;
+  gap: 24px;
+    margin-bottom: 72px;
+    justify-content: center;
+}
+
+.portfolio-filters-item {}
+
+.portfolio-examples-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 48px;
+  column-gap: 24px;
+}
+
+.portfolio-examples-list-item {
+  width: calc((100% - 2*24) / 3);
+}
+
+.portfolio-examples-text {}
+
+.card-content {
+  padding: 32px 16px;
+  border: 1px solid var(--acent-cl);
+  border-top: none;
+}
+
+/**
+  |============================
+  | Footer styles
+  |============================
+*/
+
+.footer {
+  background-color: var(--headings-cl);
+  color: var(--light-bg);
+  padding: 100px 0;
+}
+
+.footer-text {
+  letter-spacing: 0.02em;
+  max-width: 264px;
+}
+
+footer .header-logo {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.footer-logo-light {
+  color: var(--light-bg);
+}
