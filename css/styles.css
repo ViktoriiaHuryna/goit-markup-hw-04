@@ -361,7 +361,7 @@ body {
 }
 
 .team-card-content {
-  padding: 32px;
+  padding: 32px 0;
   text-align: center;
 
 }
@@ -373,13 +373,13 @@ body {
 
 .team-socials-list {
   display: flex;
-  gap:24px;
+  gap: 24px;
   align-items: center;
   justify-content: center;
 }
 
 .team-socials-list-item {
-width: calc((100% - 3 * 24px) / 4);
+width: 40px;
 height: 40px;
 }
 
