@@ -28,7 +28,7 @@ ol {
 }
 
 
-.link {
+a {
   text-decoration: none;
   color: currentColor;
   font-style: normal;
@@ -98,6 +98,7 @@ body {
 
 .header {
   border-bottom: 1px solid var(--acent-cl);
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
 
@@ -165,7 +166,9 @@ body {
 .header-address.link:focus {
   color: var(--CTA-ocean);
 }
-
+.header-link.active {
+    color: var(--CTA-ocean);
+}
 .header-link.active::after {
   content: '';
   display: block;
@@ -174,7 +177,7 @@ body {
   border-radius: 2px;
   background-color: var(--CTA-ocean);
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
 }
 
@@ -291,6 +294,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 8px;
 }
 
 .features-icon {
@@ -357,7 +361,7 @@ body {
 }
 
 .team-card-content {
-  padding: 32px 16px;
+  padding: 32px;
   text-align: center;
 
 }
@@ -371,6 +375,7 @@ body {
   display: flex;
   gap:24px;
   align-items: center;
+  justify-content: center;
 }
 
 .team-socials-list-item {
@@ -379,7 +384,9 @@ height: 40px;
 }
 
 .team-social-link {
-display: inline-block;
+display: flex;
+align-items: center;
+justify-content: center;
   width: 100%;
 height: 100%;
   border-radius: 50%;
@@ -423,21 +430,22 @@ transition-timing-function: var(--transition-timing-function);
 }
 
 .customers-link {
-border-radius: 4px;
+color: var(--light-slate);
+  border-radius: 4px;
   border: 1px solid var(--lightslate, var(--light-slate));
   height: 88px;
   width: 168px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-property: border-color;
+  transition-property: border-color, color;
     transition-duration: var(--transition-duration);
     transition-timing-function: var(--transition-timing-function);
   }
 
 
 .customers-icon {
-  fill: var(--light-slate);
+  fill: currentColor;
   transition-property: fill;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
@@ -445,11 +453,10 @@ border-radius: 4px;
 
 .customers-link:hover, .customers-link:focus {
   border-color: var(--CTA-ocean);
+  color: var(--CTA-ocean);
 }
 
-.customers-link:hover .customers-icon, .customers-link:focus .customers-icon {
-  fill: var(--CTA-ocean);
-}
+
 
 /**
   |============================
@@ -474,7 +481,7 @@ border-radius: 4px;
   padding: 12px 24px;
   border: 1px solid var(--acent-cl);
   border-radius: 4px;
-  transition-property: background-color, color, border, box-shadow;
+  transition-property: background-color, color, border-color, box-shadow;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
 }
@@ -483,7 +490,7 @@ border-radius: 4px;
 .portfolio-btn:focus {
   background-color: var(--CTA-ocean);
   color: var(--white-cl);
-  border: 1px solid transparent;
+  border-color: transparent;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
 }
 
@@ -513,11 +520,18 @@ border-radius: 4px;
   width: calc((100% - 2*24) / 3);
 }
 
-.portfolio-examples-list-item:hover, .portfolio-examples-list-item:focus {
+.portfolio-link {
+  display: block;
+  transition: box-shadow var(--transition-duration) var(--transition-timing-function);
+}
+
+.portfolio-link:hover, .portfolio-link:focus {
 box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
 0px 1px 1px 0px rgba(46, 47, 66, 0.16),
 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
+
+
 
 
 .portfolio-examples-text {}
@@ -539,7 +553,7 @@ box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
   color: var(--light-bg);
   font-size: 16px;
   background-color: var(--CTA-iris);
-  padding: 40px 32px 164px;
+  padding: 40px 32px;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -586,17 +600,20 @@ footer .header-logo {
   color: var(--white-cl);
   font-weight: 500;
   font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   margin-bottom: 16px;
 }
 
 .footer .container {
   display: flex;
   align-items: baseline;
-  gap: 120px;
   padding: 0;
 }
 
-.logo-text {}
+.logo-text {
+  margin-right: 120px;
+}
 
 .footer-socials {}
 
@@ -644,6 +661,9 @@ footer .header-logo {
   top: 0;
   left: 0;
   background-color: rgba(46, 47, 66, 0.40);
+  transition-property: opacity, visibility;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
 }
 
 .backdrop.is-hidden{
@@ -654,7 +674,7 @@ pointer-events: none;
 
 .modal {
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   border-radius: 4px;
   background-color: var(--modal-bg);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
@@ -662,6 +682,7 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translateX(-50%) translateY(-50%);
+transition: transform var(--transition-duration) var(--transition-timing-function);
 }
 
 .modal-icon {
